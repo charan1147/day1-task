@@ -1,0 +1,105 @@
+        Objects And Its Internal Representation In JavaScript
+
+Objects in JavaScript
+Objects are fundamental data structures in JavaScript, allowing you to group multiple values and functions together. They provide a powerful way to structure data, making your code more organized and easier to manage.
+
+Methods for Defining JavaScript Objects
+Using an Object Literal
+Using the new Keyword
+Using an Object Constructor
+Using Object.assign()
+Using Object.create()
+Using Object.fromEnties()
+
+1. Using an Object Literal
+This is the most straightforward method to create an object, using a comma-separated list of key-value pairs enclosed in curly braces.
+
+Syntax Example:
+
+let person = {
+name: 'Ram',
+age: 50,
+phno: 9123456789
+};
+console.log(person.name); // Output: Ram
+console.log(person.phno); // Output: 9123456789
+Object Literal: person has properties name, age, and phno.
+
+2. Using the new Keyword
+The new keyword can be used with the Object constructor to create an object.
+
+Syntax Example:
+
+let person = new Object();
+person.name = 'Ram';
+person.age = 50;
+person.country = 'India';
+console.log(person.name); // Output: Ram
+console.log(person.country); // Output: India
+Object Constructor: person is initialized with properties name, age, and country.
+
+3. Using an Object Constructor
+A constructor function creates objects with a shared structure and behavior.
+
+Syntax Example:
+
+function Person(name, age, hobbies) {
+this.name = name;
+this.age = age;
+this.hobbies = hobbies;
+}
+let person = new Person('Ram', 50, 'chess');
+console.log(person.name); // Output: Ram
+console.log(person.age); // Output: 50
+console.log(person.hobbies); // Output: chess
+Constructor Function: Person initializes objects with name, age, and hobbies.
+
+4. Using Object.assign()
+This method copies properties from one or more source objects to a target object.
+
+Syntax Example:
+
+let person = { name: 'Ram' };
+let details = { age: 50 };
+let personDetails = Object.assign(person, details);
+console.log(personDetails.name); // Output: Ram
+console.log(personDetails.age); // Output: 50
+Object.assign(): Merges properties from details into person.
+
+5. Using Object.create()
+Creates a new object with the specified prototype object.
+
+Syntax Example:
+
+let personPrototype = {
+greet: function() {
+console.log(`My name is ${this.name} and I am ${this.age} years old.`);
+}
+};
+let person = Object.create(personPrototype);
+person.name = 'Sachin';
+person.age = 18;
+person.greet(); // Output: My name is Sachin and I am 18 years old.
+console.log(person.name); // Output: Sachin
+console.log(person.age); // Output: 18
+Object.create(): Creates person with personPrototype as its prototype.
+
+6. Using Object.fromEntries()
+Transforms an array of key-value pairs into an object.
+
+Syntax Example:
+
+let entries = [['name', 'Sita'], ['age', 30]];
+let person = Object.fromEntries(entries);
+console.log(person.name); // Output: Sita
+console.log(person.age); // Output: 30
+Object.fromEntries(): Converts entries into an object.
+
+Conclusion
+JavaScript offers various methods for creating and managing objects, each suited to different needs and scenarios:
+
+⦁	Object Literals: Simple and straightforward for creating objects with static data.
+⦁	The new Keyword and Object Constructor: Allow for dynamic and reusable object creation.
+⦁	Object.assign(): Merges properties from one or more source objects into a target object.
+⦁	Object.create(): Useful for creating objects with a specified prototype, enabling inheritance and prototype-based object creation.
+⦁	Object.fromEntries(): Converts an array of key-value pairs into an object.
